@@ -18,8 +18,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common NusantaraROM stuff.
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
+# Inherit some common CherishOS stuff.
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Inherit from RMX1941 device makefile
 $(call inherit-product, device/realme/RMX1941/device.mk)
@@ -27,16 +27,18 @@ $(call inherit-product, device/realme/RMX1941/device.mk)
 # NusantaraProject stuff
 TARGET_BOOT_ANIMATION_RES := 720
 ALLOW_MISSING_DEPENDENCIES=true
-
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.maintainer=Sundram
+CHERISH_BUILD_TYPE := OFFICIAL
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := nad_RMX1941
+PRODUCT_NAME := cherish_RMX1941
 PRODUCT_DEVICE := RMX1941
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C2
 PRODUCT_MANUFACTURER := realme
 
 # Build info
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys"
+BUILD_FINGERPRINT := "google/coral/coral:11/RQ3A.210805.001.A1/7474174:user/release-keys"
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=RMX1941 \
     PRODUCT_NAME=RMX1941 \
@@ -46,3 +48,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
