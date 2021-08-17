@@ -1,4 +1,4 @@
-#
+ #
 # Copyright (C) 2020 Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -135,8 +135,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-cherish
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-cherish
 
 PRODUCT_PACKAGES += \
     NotchBarKiller
